@@ -1,9 +1,8 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/OnlineSchool #Нужно указать вашу БД
-    username: postgres # пользователь который указат у вас при создании БД
-    password: passkey # пароль который указат у вас при создании БД
-    #driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:postgresql://localhost:5432/OnlineSchool 
+    username: postgres # пользователь
+    password: passkey # пароль
     driver-class-name: org.postgresql.Driver
     initialization-mode: never
   thymeleaf:
