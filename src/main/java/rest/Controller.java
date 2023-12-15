@@ -55,7 +55,7 @@ public class Controller {
             ModelAndView modelAndView = new ModelAndView();
             return htmlPageService.createLessonPage();
         }
-
+        else{return htmlPageService.createLessonPage();}
     }
 
 
