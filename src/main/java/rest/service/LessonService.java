@@ -33,3 +33,31 @@ public class LessonService {
         lessonRepository.save(lesson);
         return getAllLessons();
     }
+    public ModelAndView getAllLessons() {
+        List<Lesson> lessons = lessonRepository.getAllLessons();
+        List<LessonDTO> resultList = new ArrayList<>();
+        for (Lesson lesson : lessons) {
+            LessonDTO lessonDTO = new LessonDTO();
+            lessonDTO.setId(Math.toIntExact((lesson.getId())));
+            lessonDTO.setName(lesson.getName());
+            lessonDTO.setAbout(lesson.getAbout());
+            lessonDTO.setCategory(lesson.getCategory());
+            lessonDTO.setTeacherId(lesson.getTeacherId());
+            lessonDTO.setVideo(lesson.getVideo());
+            resultList.add(lessonDTO);
+        }
+        return createAndFillModel(resultList);
+    }
+    private ModelAndView createAndFillModel(List<LessonDTO> lessonDTOs) {
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.clear();
+        modelAndView.getModel().put("listLessons", lessonDTOs);
+        modelAndView.setViewName("lessons-page");
+        return modelAndView;
+    }
+
+
+    public void removeLessonById(Integer id) {lessonRepository.deleteById(id);
+    }
+}
+
