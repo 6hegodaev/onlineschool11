@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import rest.dto.LessonDTO;
+import rest.persistence.entity.User;
 import rest.service.HtmlPageService;
 
 import javax.servlet.http.HttpServletResponse;
@@ -47,15 +48,15 @@ public class Controller {
         htmlPageService.removeLesson(id);
         response.sendRedirect("/");// вернуть на lessons-page.html
     }
-    /*
-    @PostMapping(value = "/login")
-    public  ModelAndView login(User user){
-        if (HtmlPageService.checkAuth(user))
-        ModelAndView modelAndView = new ModelAndView();
-        return htmlPageService.createLessonPage();
-    }
 
-*/
+    @PostMapping(value = "/login")
+    public  ModelAndView login(User user) {
+        if (true) {
+            ModelAndView modelAndView = new ModelAndView();
+            return htmlPageService.createLessonPage();
+        }
+
+    }
 
 
 
