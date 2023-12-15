@@ -45,7 +45,7 @@ public class Controller {
     public void removeLesson(@PathVariable(value = "id") Integer id, HttpServletResponse response, ModelAndView modelAndView) throws IOException {
         modelAndView.clear();
         htmlPageService.removeLesson(id);
-        response.sendRedirect("/");//TODO вернуть на lessons-page.html
+        response.sendRedirect("/");// вернуть на lessons-page.html
     }
     /*
     @PostMapping(value = "/login")
