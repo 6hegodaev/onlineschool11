@@ -3,7 +3,6 @@
 package rest.service;
 import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.ModelAndView;
-import rest.dto.userDTO;
 import rest.dto.UserDTO;
 import rest.persistence.entity.User;
 import rest.persistence.repository.UserRepository;
